@@ -1,0 +1,149 @@
+/* Ajustes globais */
+body {
+    scroll-behavior: smooth;
+    background-color: #212121;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Media Queries */
+
+/* Dispositivos com largura de até 768px (Tablets e smartphones em paisagem) */
+@media (max-width: 768px) {
+    .nav-menus {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-menus > ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menus > ul > li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .carrossel {
+        height: 60vh;
+    }
+
+    .sinopse-naruto {
+        width: 80%;
+        height: 40%;
+        margin-top: 10em;
+        margin-left: 1em;
+        padding: 1em;
+    }
+
+    .bn-img img {
+        width: 100%;
+    }
+
+    .bn-animeG-child {
+        width: 100%;
+        margin: 1em auto;
+    }
+
+    .bn-animeG-child2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bn-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bn-buto {
+        flex-direction: column;
+    }
+}
+
+/* Dispositivos com largura de até 480px (Smartphones) */
+@media (max-width: 480px) {
+    .sinopse-naruto {
+        margin-top: 5em;
+        width: 90%;
+        height: auto;
+        padding: 1em;
+    }
+
+    .sinopse-naruto h1 {
+        font-size: 14pt;
+    }
+
+    .sinopse-naruto p {
+        font-size: 9pt;
+    }
+
+    .assistir-btn {
+        padding: 0.5em 1.5em;
+        font-size: 9pt;
+    }
+
+    .footer-img > img {
+        width: 80%;
+    }
+
+    .bn-animeG-child2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bn-text {
+        width: 90%;
+    }
+}
+
+/* Dispositivos com largura de até 1024px (Desktops pequenos e tablets) */
+@media (max-width: 1024px) {
+    .nav-menus {
+        flex-direction: column;
+    }
+
+    .carrossel {
+        height: 80vh;
+    }
+
+    .sinopse-naruto {
+        width: 60%;
+        height: auto;
+        margin-top: 12em;
+        margin-left: 1.5em;
+    }
+
+    .bn-animeG-child {
+        width: 90%;
+        margin: 1em auto;
+    }
+
+    .bn-img img {
+        width: 100%;
+    }
+
+    .bn-text {
+        width: 100%;
+    }
+}
+
+/* Footer Responsivo */
+footer {
+    flex-direction: column;
+    padding: 1em;
+    text-align: center;
+}
+
+.footer-txt > div,
+.footer-txt > h4,
+.direitos {
+    padding: 0.5em;
+}
+
+.footer-img > img {
+    width: 100%;
+}
