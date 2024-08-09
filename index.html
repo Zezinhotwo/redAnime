@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RedAnime</title>
-    <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Carrocel Lib Owl Carousel 2 -->
     <link
@@ -14,9 +14,14 @@
   </head>
   <body>
     <header>
-      <nav class="nav-menus">
-        <img class="logo" src="assets/pngegg.png" alt="" />
-        <ul>
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav class="nav-menus" id="nav-menus">
+            <img class="logo" src="assets/pngegg.png" alt="" />
+            <ul>
           <li class="sub-menu">
             <a href="#">Animes</a>
             <ul class="sub-menu-item">
@@ -391,10 +396,13 @@
         </div>
       </div>
       <div class="direitos">
-        <p>© 2024 RedAnime - Todos os Direitos Reservados - Política de Privacidade - DMCA</p>
+        <p>
+          © 2024 RedAnime - Todos os Direitos Reservados - Política de
+          Privacidade - DMCA
+        </p>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <script src="index.js"></script>
     <!--  Carrocel Lib Owl Carousel 2-->
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>

@@ -1,28 +1,20 @@
 $(document).ready(function () {
     $(".sub-menu-item").css("display", "none");
-  
-    // Para dispositivos móveis, o menu deve abrir ao toque
-    if ($(window).width() <= 768) {
-      $(".sub-menu").on("click", function () {
-        $(this).find(".sub-menu-item").toggle();
-      });
-    } else {
-      $(".sub-menu").on("mouseenter", function () {
-        $(this).find(".sub-menu-item").toggle();
-      });
-      $(".sub-menu").on("mouseleave", function () {
-        $(this).find(".sub-menu-item").toggle();
-      });
-    }
-  
+    $(".sub-menu").on("mouseenter", function () {
+      $(this).find(".sub-menu-item").toggle();
+    });
+    $(".sub-menu").on("mouseleave", function () {
+      $(this).find(".sub-menu-item").toggle();
+    });
     $(window).on("scroll", function () {
       let ct = $(window).scrollTop();
-  
-      if (ct > 420) {
+      // alert(ct);
+      if (ct > 220) {
+        // console.log(ct);
         $("header").fadeIn("3000").css({
           transition: ".5s",
           height: "60px",
-          "box-shadow": "1px 3px 3px 1px rgba(255, 0, 0, 0.616)",
+          "box-shadow": "1px 3px 3px 1px rgba(255, 0, 0, 0.616) ",
         });
         $(".sinopse-naruto").fadeOut("200");
       } else {
@@ -33,9 +25,8 @@ $(document).ready(function () {
         $(".sinopse-naruto").fadeIn("200ms");
       }
     });
-  
     $(".sinopse-naruto").fadeIn("1000");
-    setInterval(slide, 5500);
+    setInterval(slide, 5500); // Intervalo de 3 segundos entre cada slide
   
     function slide() {
       const current = $(".foto-carrossel.show");
@@ -43,21 +34,25 @@ $(document).ready(function () {
   
       if (next.length) {
         current.fadeOut(function () {
+          // Animação de fadeOut com duração de 1 segundo
           current.removeClass("show");
-          next.fadeIn().addClass("show");
+          next.fadeIn().addClass("show"); // Animação de fadeIn com duração de 1 segundo
         });
       } else {
         current.fadeOut(function () {
+          // Animação de fadeOut com duração de 1 segundo
           current.removeClass("show");
-          $(".foto-carrossel").first().fadeIn().addClass("show");
+          $(".foto-carrossel").first().fadeIn().addClass("show"); // Animação de fadeIn com duração de 1 segundo
         });
       }
     }
+    // Carrocel Lib
   
     $(".owl-carousel")
       .css({
         "margin-top": "2em",
         "margin-bottom": "2em",
+        // "filter":"grayscale(1.5)"
       })
       .owlCarousel({
         autoplay: true,
@@ -88,12 +83,10 @@ $(document).ready(function () {
         "object-fit": "cover",
       })
       .on("mouseenter", function () {
-        if ($(window).width() > 768) {
-          $(this).css({
-            filter: "brightness(1.2)",
-            transition: "filter 0.3s",
-          });
-        }
+        $(this).css({
+          filter: "brightness(1.2)",
+          transition: "filter 0.3s",
+        });
       })
       .on("mouseleave", function () {
         $(this).css({
@@ -101,5 +94,10 @@ $(document).ready(function () {
           transition: "filter 0.3s",
         });
       });
+    // FIM Do Carrocel Lib
   });
-  
+//   8u79897qrq
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('nav-menus').classList.toggle('active');
+});

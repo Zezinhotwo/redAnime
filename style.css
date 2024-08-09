@@ -1,149 +1,278 @@
-/* Ajustes globais */
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     scroll-behavior: smooth;
     background-color: #212121;
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
-/* Media Queries */
-
-/* Dispositivos com largura de até 768px (Tablets e smartphones em paisagem) */
-@media (max-width: 768px) {
-    .nav-menus {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .nav-menus > ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menus > ul > li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .carrossel {
-        height: 60vh;
-    }
-
-    .sinopse-naruto {
-        width: 80%;
-        height: 40%;
-        margin-top: 10em;
-        margin-left: 1em;
-        padding: 1em;
-    }
-
-    .bn-img img {
-        width: 100%;
-    }
-
-    .bn-animeG-child {
-        width: 100%;
-        margin: 1em auto;
-    }
-
-    .bn-animeG-child2 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bn-text {
-        width: 100%;
-        text-align: center;
-    }
-
-    .bn-buto {
-        flex-direction: column;
-    }
+body::-webkit-scrollbar {
+    width: 8px;
 }
 
-/* Dispositivos com largura de até 480px (Smartphones) */
-@media (max-width: 480px) {
-    .sinopse-naruto {
-        margin-top: 5em;
-        width: 90%;
-        height: auto;
-        padding: 1em;
-    }
-
-    .sinopse-naruto h1 {
-        font-size: 14pt;
-    }
-
-    .sinopse-naruto p {
-        font-size: 9pt;
-    }
-
-    .assistir-btn {
-        padding: 0.5em 1.5em;
-        font-size: 9pt;
-    }
-
-    .footer-img > img {
-        width: 80%;
-    }
-
-    .bn-animeG-child2 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .bn-text {
-        width: 90%;
-    }
+body::-webkit-scrollbar-track {
+    background: #212121;
 }
 
-/* Dispositivos com largura de até 1024px (Desktops pequenos e tablets) */
-@media (max-width: 1024px) {
-    .nav-menus {
-        flex-direction: column;
-    }
-
-    .carrossel {
-        height: 80vh;
-    }
-
-    .sinopse-naruto {
-        width: 60%;
-        height: auto;
-        margin-top: 12em;
-        margin-left: 1.5em;
-    }
-
-    .bn-animeG-child {
-        width: 90%;
-        margin: 1em auto;
-    }
-
-    .bn-img img {
-        width: 100%;
-    }
-
-    .bn-text {
-        width: 100%;
-    }
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.616);
+    border-radius: 20px;
 }
 
-/* Footer Responsivo */
-footer {
+/* Estilos do header */
+header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    padding: 0 1em;
+}
+
+.nav-menus {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: auto;
+    max-width: 150px;
+}
+
+.nav-menus > ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.sub-menu {
+    position: relative;
+    padding: 0.5em 1em;
+    background-color: #2f2f2f;
+}
+
+.sub-menu:hover .sub-menu-item {
+    display: block;
+}
+
+.sub-menu > a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Estilos do carrossel */
+.carrossel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.foto-carrossel {
+    display: flex;
     flex-direction: column;
+}
+
+.foto-carrossel img {
+    width: 100%;
+    height: auto;
+}
+
+.sinopse-naruto {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.822);
+    margin: 10px;
+    width: calc(100% - 20px);
+    max-width: 600px;
     padding: 1em;
+    color: #fff;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.sinopse-logo {
+    height: auto;
+    max-width: 100%;
+}
+
+.assistir-btn {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.assistir-btn:hover {
+    border-color: #f00;
+    background-color: #f00;
+}
+
+/* Estilos principais */
+main {
+    margin: 0 auto;
+    padding: 1em;
+    color: #fff;
+}
+
+.ls-animeG {
+    margin-top: 1em;
     text-align: center;
 }
 
-.footer-txt > div,
-.footer-txt > h4,
-.direitos {
-    padding: 0.5em;
+.title-anime {
+    margin: 1em 0;
 }
 
-.footer-img > img {
+/* Estilos do banner */
+.bn-animeG {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bn-animeG-child {
     width: 100%;
+    max-width: 1200px;
+    margin: 1em auto;
+}
+
+.bn-animeG-child > img {
+    width: 100%;
+    height: auto;
+}
+
+.bn-animeG-child2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.bn-img {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.bn-text {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.bn-text > h3 {
+    font-size: 1.5em;
+}
+
+.bn-text > p {
+    line-height: 1.5em;
+}
+
+/* Estilos do footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.footer-img {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1em;
+}
+
+.footer-txt {
+    text-align: center;
+}
+
+.footer-txt ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-txt li {
+    margin: 0.5em 0;
+}
+
+.direitos {
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+/* 000000000000000000000000000000000000000000 */
+/* Estilos do menu toggle (hambúrguer) */
+.menu-toggle {
+    display: none; /* Oculta o botão no desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        height: 70px;
+    }
+    .carrossel{
+        padding-top: 95px;
+    }
+    .nav-menus {
+        display: none; /* Oculta o menu inicialmente */
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .nav-menus.active {
+        display: flex; /* Mostra o menu quando ativado */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostra o botão no mobile */
+    }
+    img {
+        width: 100%;
+    }
+
+    .sinopse-naruto {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.822);
+        border-radius: 10px;
+        margin: 10px;
+        width: 60%;
+        padding: 1em;
+        color: #fff;
+        font-size: .5em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sinopse-logo {
+        height: auto;
+        max-width: 50%;
+    }
 }
