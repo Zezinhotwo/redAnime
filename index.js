@@ -14,7 +14,7 @@ $(document).ready(function () {
         $("header").fadeIn("3000").css({
           transition: ".5s",
           height: "60px",
-          "box-shadow": "1px 3px 3px 1px rgba(255, 0, 0, 0.616) ",
+          "box-shadow": "2px 3px 3px 1px rgba(255, 0, 0, 0.616) ",
         });
         $(".sinopse-naruto").fadeOut("200");
       } else {

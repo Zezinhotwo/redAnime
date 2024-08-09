@@ -233,12 +233,11 @@ footer {
     header {
         height: 70px;
     }
-    .carrossel{
+    .carrossel {
         padding-top: 95px;
         object-fit: contain;
     }
-   
-    
+
     .nav-menus {
         display: none; /* Oculta o menu inicialmente */
         flex-direction: column;
@@ -269,13 +268,56 @@ footer {
         width: 60%;
         padding: 1em;
         color: #fff;
-        font-size: .5em;
+        font-size: 0.5em;
         display: flex;
         flex-direction: column;
     }
-
     .sinopse-logo {
         height: auto;
-        max-width: 50%;
+    }
+    .bn-animeG-child{
+        width: 100%;
+        margin-top: -2em;
+    }
+    .bn-buto > button {
+        margin-top: 0.5em;
+        padding: 4px 10px;
+        font-size: larger;
+        font-family: "Courier New", Courier, monospace;
+        border: 2px solid rgba(255, 0, 0, 0);
+        color: #212121;
+        background-color: red;
+        transition: 0.5s;
+    }
+    .bn-buto .bn-buto-child {
+        padding: 4px 20px;
+        font-size: larger;
+        font-family: "Courier New", Courier, monospace;
+        border: 2px solid red;
+        color: #ff0000;
+        background-color: transparent;
+    }
+    footer {
+        margin-top: -5em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer-txt {
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .footer-img {
+        width: 80%;
+    }
+    .direitos {
+        color: white;
     }
 }
