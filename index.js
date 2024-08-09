@@ -63,7 +63,7 @@ $(document).ready(function () {
         margin: 25,
         responsive: {
           0: {
-            items: 1,
+            items: 3,
           },
           600: {
             items: 3,
@@ -79,8 +79,9 @@ $(document).ready(function () {
   
     $(".owl-item")
       .css({
-        height: "29em",
-        "object-fit": "cover",
+        height: "9em",
+        // "object-fit": "cover",
+        // "width": "10%",
       })
       .on("mouseenter", function () {
         $(this).css({

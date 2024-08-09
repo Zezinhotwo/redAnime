@@ -235,7 +235,10 @@ footer {
     }
     .carrossel{
         padding-top: 95px;
+        object-fit: contain;
     }
+   
+    
     .nav-menus {
         display: none; /* Oculta o menu inicialmente */
         flex-direction: column;
