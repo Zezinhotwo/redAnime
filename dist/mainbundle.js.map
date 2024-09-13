@@ -1,0 +1,1 @@
+{"version":3,"file":"mainbundle.js","mappings":"gFAAAA,SAASC,KAAKC,UAAY,Y","sources":["webpack://redanime/./src/scripts/main.js"],"sourcesContent":["document.body.innerText = \"Ola, MUNDO\";"],"names":["document","body","innerText"],"sourceRoot":""}
