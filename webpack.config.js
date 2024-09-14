@@ -3,9 +3,9 @@ const HtmlWebpackPlugins = require("html-webpack-plugin");
 const { optimize } = require("webpack");
 
 module.exports = {
-    mode: "production",
+    // mode: "production",
 
-//   mode: "development",
+  mode: "development",
   entry: "./src/scripts/main.js",
   devtool: "source-map",
   devServer: {
@@ -23,6 +23,9 @@ module.exports = {
     clean: true,
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     runtimeChunk: "single",
   },
   module: {
@@ -33,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|webP|avif|gif)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
   },
