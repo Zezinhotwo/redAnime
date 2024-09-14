@@ -102,7 +102,7 @@ header {
         margin-top: -1em;
         background: rgba(16, 16, 18, 0.377);
         background: linear-gradient(355deg, rgba(16, 16, 18, 0.897) 0%, rgba(0, 0, 0, 1) 100%);
-
+        text-align: justify;
         height: 250px;
         width: 100%;
         padding: 1em;
@@ -113,18 +113,77 @@ header {
         flex-direction: column;
         justify-content: space-between;
     }
-    .sectionSlides{
+    .sectionSlides {
         color: white;
         padding: 1em;
     }
-    .slides{
+    .slides {
         margin: 0.5em 0;
         display: flex;
         align-items: center;
         justify-content: center;
         justify-content: space-around;
     }
-    .animeSlide{
+    .animeSlide {
         width: 45%;
+    }
+
+    .wind {
+        width: 100%;
+        padding: 1em;
+    }
+    .wind__text {
+        padding: 1em;
+        color: white;
+        height: 250px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .kimetsu {
+        width: 100%;
+        padding: 1em;
+    }
+    .kimetsu__text {
+        padding: 1em;
+        color: white;
+        height: 250px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-img {
+        width: 50%;
+        position: absolute;
+        left: -20%;
+        z-index: -10;
+    }
+    .rodape {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        ul {
+            font-size: 10px;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            li {
+                list-style: circle;
+            }
+        }
     }
 }

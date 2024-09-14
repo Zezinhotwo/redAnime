@@ -1,14 +1,18 @@
 // document.body.innerText = "Ola, MUNDO";
 import "../assets/styles/style.css";
 import logo from "../assets/img/logo.png";
+import footer from "../assets/img/footer.png";
 import { doc } from "prettier";
 // IMGS
 const $logo = document.querySelector(".logo");
 $logo.src = logo;
 
+const $footer = document.querySelector(".footer-img");
+$footer.src = footer;
+
 const $slide = document.querySelector(".slid1");
 const slide =
-  "https://www.teahub.io/photos/full/33-339920_tokyo-ghoul-desktop-background.jpg";
+  "https://www.canalterror.com.br/wp-content/uploads/2020/01/tokyoghoul.jpg";
 $slide.src = slide;
 
 const $animeSlide = document.querySelectorAll(".animeSlide");
@@ -16,6 +20,15 @@ const animeSlide =
   "https://i.pinimg.com/564x/e2/37/72/e23772515fabaa62913d4bfc1f524679.jpg";
 $animeSlide.forEach((index) => (index.src = animeSlide));
 
+const $wind = document.querySelector(".wind");
+const wind =
+  "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/c3705f0653418420369d475cbff2e2c8.jpe";
+$wind.src = wind;
+
+const $kimetsu = document.querySelector(".kimetsu");
+const kimetsu =
+  "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/6b17182a3518d7406f0e69687f773f4f.jpg";
+$kimetsu.src = kimetsu;
 // Hamburg
 
 document.querySelector("#menu-toggle").addEventListener("click", () => {
