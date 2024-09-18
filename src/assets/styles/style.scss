@@ -3,7 +3,6 @@
 
 body {
     background-color: #212121;
-    height: 1200px;
     scroll-behavior: smooth;
 }
 
@@ -113,6 +112,13 @@ header {
         flex-direction: column;
         justify-content: space-between;
     }
+    .bnt_sinops {
+        border: 2px solid red;
+        border-radius: 10px;
+        color: #ffffff;
+        background-color: transparent;
+        padding: 0.5em 1em;
+    }
     .sectionSlides {
         color: white;
         padding: 1em;
@@ -123,9 +129,21 @@ header {
         align-items: center;
         justify-content: center;
         justify-content: space-around;
+        overflow: hidden;
+        transition: .5s;
+
     }
     .animeSlide {
         width: 45%;
+        margin: 0 0.5em;
+    }
+    .slideANIME {
+        width: 45%;
+        margin: 0 0.5em;
+    }
+
+    .movendo {
+        cursor: grabbing;
     }
 
     .wind {
@@ -155,6 +173,26 @@ header {
         justify-content: center;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .ads_bnt {
+        border: 2px solid rgba(255, 0, 0, 0);
+        color: #212121;
+        background-color: red;
+        padding: 0.5em 1em;
+    }
+    .ads_bnt:hover {
+        background-color: rgb(255, 37, 37);
+        color: #ffffff;
+    }
+    .ver_bnt {
+        border: 2px solid red;
+        color: #ff0000;
+        background-color: transparent;
+        padding: 0.5em 1em;
+    }
+    .ver_bnt:hover {
+        color: #ffffff;
+        background-color: transparent;
     }
     footer {
         display: flex;
