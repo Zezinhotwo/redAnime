@@ -50,26 +50,46 @@ window.addEventListener("scroll", () => {
     document.querySelector("header").style.opacity = "85%";
   }
 });
-// SLIDE
+// SLIDE PRINCIPAL 
 const carrossel = document.querySelectorAll(".slides");
 
 let isDragging = false;
 let startX = 0;
+let startY = 0;
 let scrollLeft;
+let isScrollingVertically = false;
 
 function startDrag(e, carrosselElement) {
   isDragging = true;
+  isScrollingVertically = false;
   carrosselElement.classList.add("movendo");
 
+  // Detecta posição inicial do toque
   startX = (e.pageX || e.touches[0].pageX) - carrosselElement.offsetLeft;
+  startY = e.pageY || e.touches[0].pageY;
   scrollLeft = carrosselElement.scrollLeft;
 }
 
 function dragMove(e, carrosselElement) {
   if (!isDragging) return;
-  e.preventDefault();
+
   const x = (e.pageX || e.touches[0].pageX) - carrosselElement.offsetLeft;
-  const walk = x - startX;
+  const y = e.pageY || e.touches[0].pageY;
+
+  // Determina se o movimento é mais vertical ou horizontal
+  const moveX = x - startX;
+  const moveY = y - startY;
+
+  // Se o movimento vertical for maior que o horizontal, não arrasta o carrossel
+  if (Math.abs(moveY) > Math.abs(moveX)) {
+    isScrollingVertically = true;
+    return;
+  }
+
+  // Impede o scroll padrão (evitar interferência)
+  e.preventDefault();
+
+  const walk = moveX;
   carrosselElement.scrollLeft = scrollLeft - walk;
 }
 
@@ -78,37 +98,32 @@ function endDrag(carrosselElement) {
   carrosselElement.classList.remove("movendo");
 }
 
-// Função para mover automaticamente
 function autoSlide(carrosselElement) {
-  const slideWidth = carrosselElement.firstElementChild.offsetWidth; // Tamanho de um slide
+  const slideWidth = carrosselElement.firstElementChild.offsetWidth;
   const newScrollPosition = carrosselElement.scrollLeft + slideWidth;
 
-  // Verifica se está no final, e volta ao início
   if (newScrollPosition >= carrosselElement.scrollWidth - carrosselElement.clientWidth) {
     carrosselElement.scrollTo({
       left: 0,
-      behavior: 'smooth' // Movimento suave
+      behavior: 'smooth'
     });
   } else {
     carrosselElement.scrollTo({
       left: newScrollPosition,
-      behavior: 'smooth' // Movimento suave
+      behavior: 'smooth'
     });
   }
 }
 
 carrossel.forEach((carrosselElement) => {
-  // Eventos de mouse
   carrosselElement.addEventListener("mousedown", (e) => startDrag(e, carrosselElement));
   carrosselElement.addEventListener("mousemove", (e) => dragMove(e, carrosselElement));
   carrosselElement.addEventListener("mouseup", () => endDrag(carrosselElement));
   carrosselElement.addEventListener("mouseleave", () => endDrag(carrosselElement));
 
-  // Eventos de toque (touch)
   carrosselElement.addEventListener("touchstart", (e) => startDrag(e, carrosselElement));
   carrosselElement.addEventListener("touchmove", (e) => dragMove(e, carrosselElement));
   carrosselElement.addEventListener("touchend", () => endDrag(carrosselElement));
 
-  // Inicia o movimento automático a cada 3 segundos
-  setInterval(() => autoSlide(carrosselElement), 3500);
+  setInterval(() => autoSlide(carrosselElement), 3000);
 });
