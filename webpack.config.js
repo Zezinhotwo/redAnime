@@ -38,6 +38,13 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|webP|avif|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(mp4|webm|ogg)$/i, // Verifica se é um arquivo de vídeo
+        type: 'asset/resource', // Usado para mover arquivos de mídia com Webpack 5
+        generator: {
+          filename: 'videos/[name][ext]', // Pasta e nome do arquivo no build
+        },
+      },
     ],
   },
 };

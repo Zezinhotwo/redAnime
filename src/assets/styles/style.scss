@@ -1,9 +1,10 @@
 @import "resets.scss";
 @import "colors.scss";
-
-body {
-    background-color: #212121;
+html {
     scroll-behavior: smooth;
+  }
+body {
+    background-color: #000000;
 }
 
 .menu-toggle {
@@ -11,7 +12,7 @@ body {
 }
 .menu-icon {
     display: none;
-    margin-top: -10px;
+    margin-top: 10px;
 }
 .menu-icon span {
     display: block;
@@ -23,7 +24,7 @@ body {
     border-radius: 5px;
 }
 header {
-    background-color: #212121;
+    background-color: #000000;
     height: 80px;
 }
 @media screen and (max-width: 468px) {
@@ -54,8 +55,8 @@ header {
         z-index: 100;
     }
     .logo {
-        width: 30%;
-        margin-top: -10px;
+        width: 20%;
+        margin-top: 10px;
     }
     nav {
         width: 100%;
@@ -68,7 +69,7 @@ header {
         align-items: start;
         flex-direction: column;
         // flex-direction: column;
-        height: 300px;
+        height: 250px;
     }
     .hamburg-logo {
         top: 0%;
@@ -97,31 +98,33 @@ header {
     .slid1 {
         width: 100%;
     }
+    .video{
+        width:100%;
+    }
     .sinopse {
-        margin-top: -1em;
         background: rgba(16, 16, 18, 0.377);
         background: linear-gradient(355deg, rgba(16, 16, 18, 0.897) 0%, rgba(0, 0, 0, 1) 100%);
-        text-align: justify;
-        height: 250px;
-        width: 100%;
-        padding: 1em;
+        width: 30%;
+        margin: auto;
+        position: absolute;
+        top: 65%;
+        left: 36%;
         color: white;
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: space-between;
     }
     .bnt_sinops {
         border: 2px solid red;
         border-radius: 10px;
         color: #ffffff;
         background-color: transparent;
-        padding: 0.5em 1em;
     }
     .sectionSlides {
         color: white;
         padding: 1em;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .slides {
         margin: 0.5em 0;

@@ -2,21 +2,26 @@
 import "../assets/styles/style.css";
 import logo from "../assets/img/logo.png";
 import footer from "../assets/img/footer.png";
+import video from "../assets/img/sukuna.mp4";
 import { doc } from "prettier";
 // IMGS
 const $logo = document.querySelector(".logo");
 $logo.src = logo;
 
+const $video = document.querySelector(".video");
+$video.src = video;
+
 const $footer = document.querySelector(".footer-img");
 $footer.src = footer;
 
-const $slide = document.querySelector(".slid1");
-const slide =
-  "https://www.canalterror.com.br/wp-content/uploads/2020/01/tokyoghoul.jpg";
-$slide.src = slide;
+// const $slide = document.querySelector(".slid1");
+// const slide =
+//   "https://www.canalterror.com.br/wp-content/uploads/2020/01/tokyoghoul.jpg";
+// $slide.src = slide;
 
-const $slideANIME = document.querySelectorAll(".slideANIME")
-const slideANIME ="https://m.media-amazon.com/images/I/61NPpt5HC6L._AC_UF894,1000_QL80_.jpg"
+const $slideANIME = document.querySelectorAll(".slideANIME");
+const slideANIME =
+  "https://m.media-amazon.com/images/I/61NPpt5HC6L._AC_UF894,1000_QL80_.jpg";
 $slideANIME.forEach((index) => (index.src = slideANIME));
 const $animeSlide = document.querySelectorAll(".animeSlide");
 const animeSlide =
@@ -42,15 +47,15 @@ document.querySelector("#menu-toggle").addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   let scro = window.scrollY; // Captura a posição de rolagem vertical
   // console.log(scro); // Exibe a posição de rolagem no console
-  if (scro <= 149) {
-    document.querySelector("header").style.position = "relative";
+  if (scro <= 0) {
+    document.querySelector("header").style.position = "fixed";
     document.querySelector("header").style.opacity = "100%";
   } else {
     document.querySelector("header").style.position = "fixed";
     document.querySelector("header").style.opacity = "85%";
   }
 });
-// SLIDE PRINCIPAL 
+// SLIDE PRINCIPAL
 const carrossel = document.querySelectorAll(".slides");
 
 let isDragging = false;
@@ -102,28 +107,43 @@ function autoSlide(carrosselElement) {
   const slideWidth = carrosselElement.firstElementChild.offsetWidth;
   const newScrollPosition = carrosselElement.scrollLeft + slideWidth;
 
-  if (newScrollPosition >= carrosselElement.scrollWidth - carrosselElement.clientWidth) {
+  if (
+    newScrollPosition >=
+    carrosselElement.scrollWidth - carrosselElement.clientWidth
+  ) {
     carrosselElement.scrollTo({
       left: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   } else {
     carrosselElement.scrollTo({
       left: newScrollPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
 }
 
 carrossel.forEach((carrosselElement) => {
-  carrosselElement.addEventListener("mousedown", (e) => startDrag(e, carrosselElement));
-  carrosselElement.addEventListener("mousemove", (e) => dragMove(e, carrosselElement));
+  carrosselElement.addEventListener("mousedown", (e) =>
+    startDrag(e, carrosselElement)
+  );
+  carrosselElement.addEventListener("mousemove", (e) =>
+    dragMove(e, carrosselElement)
+  );
   carrosselElement.addEventListener("mouseup", () => endDrag(carrosselElement));
-  carrosselElement.addEventListener("mouseleave", () => endDrag(carrosselElement));
+  carrosselElement.addEventListener("mouseleave", () =>
+    endDrag(carrosselElement)
+  );
 
-  carrosselElement.addEventListener("touchstart", (e) => startDrag(e, carrosselElement));
-  carrosselElement.addEventListener("touchmove", (e) => dragMove(e, carrosselElement));
-  carrosselElement.addEventListener("touchend", () => endDrag(carrosselElement));
+  carrosselElement.addEventListener("touchstart", (e) =>
+    startDrag(e, carrosselElement)
+  );
+  carrosselElement.addEventListener("touchmove", (e) =>
+    dragMove(e, carrosselElement)
+  );
+  carrosselElement.addEventListener("touchend", () =>
+    endDrag(carrosselElement)
+  );
 
   setInterval(() => autoSlide(carrosselElement), 3000);
 });
