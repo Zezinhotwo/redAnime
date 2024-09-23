@@ -2,7 +2,7 @@
 @import "colors.scss";
 html {
     scroll-behavior: smooth;
-  }
+}
 body {
     background-color: #000000;
 }
@@ -69,7 +69,7 @@ header {
         align-items: start;
         flex-direction: column;
         // flex-direction: column;
-        height: 250px;
+        height: 260px;
     }
     .hamburg-logo {
         top: 0%;
@@ -98,25 +98,77 @@ header {
     .slid1 {
         width: 100%;
     }
-    .video{
-        width:100%;
+    .video {
+        width: 100%;
+    }
+    @keyframes ancora {
+        0%{
+            top: 85%;
+        }
+        50% {
+            top: 82%;
+        }
+        100%{
+            top:75;
+            
+        }
+    }
+    @keyframes back {
+        0%{
+            background-color: red;
+        }
+        50% {
+            background-color: rgb(201, 93, 93);
+        }
+        100%{
+            background-color: white;
+        }
     }
     .sinopse {
-        background: rgba(16, 16, 18, 0.377);
-        background: linear-gradient(355deg, rgba(16, 16, 18, 0.897) 0%, rgba(0, 0, 0, 1) 100%);
         width: 30%;
         margin: auto;
         position: absolute;
-        top: 65%;
+        top: 85%;
         left: 36%;
-        color: white;
+        animation-duration: 2s;
+        animation-name: ancora;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        display: flex;
+        justify-content: center;
     }
+
     .bnt_sinops {
-        border: 2px solid red;
-        border-radius: 10px;
-        color: #ffffff;
-        background-color: transparent;
+        height: 60px;
+        background-color: #fff3f309;
+        width: 70px;
+        border-radius:100% ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    .bnt_sinops span:first-child {
+        animation: 3s back backwards ease-in-out infinite;
+        display: block;
+        margin: 0.5em 0;
+        width: 35px;
+        height: 5px;
+        background-color: rgb(255, 0, 0);
+        transform: rotate(40deg) translate(5px, 0px);
+        border-radius: 5px 0 0 5px;
+    }
+    .bnt_sinops span:last-child {
+        animation: 3s back backwards ease-in-out infinite;
+        display: block;
+        margin: 0.5em 0;
+        width: 35px;
+        height: 5px;
+        background-color: rgb(255, 0, 0);
+        transform: rotate(140deg) translate(6px, 1px);
+        border-radius: 5px 0 0 5px;
+    }
+
     .sectionSlides {
         color: white;
         padding: 1em;
@@ -133,12 +185,12 @@ header {
         justify-content: center;
         justify-content: space-around;
         overflow: hidden;
-        transition: .5s;
-
+        transition: 0.5s;
     }
     .animeSlide {
         width: 45%;
         margin: 0 0.5em;
+        height: 96%;
     }
     .slideANIME {
         width: 45%;
@@ -205,7 +257,7 @@ header {
     .footer-img {
         width: 50%;
         position: absolute;
-        left: -20%;
+        left: -10%;
         z-index: -10;
     }
     .rodape {

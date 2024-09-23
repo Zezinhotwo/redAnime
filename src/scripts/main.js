@@ -55,6 +55,7 @@ window.addEventListener("scroll", () => {
     document.querySelector("header").style.opacity = "85%";
   }
 });
+
 // SLIDE PRINCIPAL
 const carrossel = document.querySelectorAll(".slides");
 
