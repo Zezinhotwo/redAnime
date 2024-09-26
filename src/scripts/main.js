@@ -40,21 +40,22 @@ $kimetsu.src = kimetsu;
 // Hamburg
 
 document.querySelector("#menu-toggle").addEventListener("click", () => {
-  document.querySelector("nav").classList.toggle("hide-show");
+  document.querySelector("nav").classList.toggle("show")
+ 
 
-  document.querySelector("header").classList.toggle("plusHome");
+
 });
-window.addEventListener("scroll", () => {
-  let scro = window.scrollY; // Captura a posição de rolagem vertical
-  // console.log(scro); // Exibe a posição de rolagem no console
-  if (scro <= 0) {
-    document.querySelector("header").style.position = "fixed";
-    document.querySelector("header").style.opacity = "100%";
-  } else {
-    document.querySelector("header").style.position = "fixed";
-    document.querySelector("header").style.opacity = "85%";
-  }
-});
+// window.addEventListener("scroll", () => {
+//   let scro = window.scrollY; // Captura a posição de rolagem vertical
+//   // console.log(scro); // Exibe a posição de rolagem no console
+//   if (scro <= 0) {
+//     document.querySelector("header").style.position = "fixed";
+//     document.querySelector("header").style.opacity = "100%";
+//   } else {
+//     document.querySelector("header").style.position = "fixed";
+//     document.querySelector("header").style.opacity = "85%";
+//   }
+// });
 
 // SLIDE PRINCIPAL
 const carrossel = document.querySelectorAll(".slides");

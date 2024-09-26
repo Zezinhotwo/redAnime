@@ -1,282 +1,236 @@
 @import "resets.scss";
 @import "colors.scss";
+@import "models.scss";
+@keyframes ancora {
+    0% {
+        top: 85%;
+    }
+    50% {
+        top: 82%;
+    }
+    100% {
+        top: 75;
+    }
+}
+@keyframes back {
+    0% {
+        background-color: $color__red;
+    }
+    50% {
+        background-color: rgb(201, 93, 93);
+    }
+    100% {
+        background-color: $color__white;
+    }
+}
 html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: #000000;
+    background-color: $color__black;
 }
-
 .menu-toggle {
     display: none;
 }
-.menu-icon {
-    display: none;
-    margin-top: 10px;
-}
 .menu-icon span {
+    @include height-width(5px, 40px);
     display: block;
     margin: 0.5em 0;
-    width: 40px;
-    height: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: $color__white;
     transition: 0.5s;
     border-radius: 5px;
 }
-header {
-    background-color: #000000;
-    height: 80px;
+
+.menu-icon {
+    display: block; /* Exibe o menu-icon em telas menores */
 }
-@media screen and (max-width: 468px) {
-    .menu-icon {
-        display: block; /* Exibe o menu-icon em telas menores */
+.menu-toggle:checked + .menu-icon span:first-child {
+    background-color: $color__red;
+    transform: rotate(45deg) translate(9px, 10px);
+    width: 40px;
+    border-radius: 5px;
+}
+.menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0%;
+}
+.menu-toggle:checked + .menu-icon span:last-child {
+    background-color: $color__red;
+    transform: rotate(-45deg) translate(8px, -10px);
+    width: 40px;
+    border-radius: 5px;
+}
+header {
+    width: 100%;
+    background-color: black;
+    @include flexBox(flex, center, 0, column);
+    padding: 0 1em;
+    transition: 0.5s;
+    z-index: 100;
+    position: fixed;
+}
+.logo {
+    width: 20%;
+}
+.show {
+    display: block;
+    transition: 0.5s;
+}
+nav {
+    display: none;
+    width: 100%;
+    color: white;
+}
+.hamburg-logo {
+    @include flexBox(flex, center, space-between);
+    top: 0%;
+    width: 100%;
+}
+.catego {
+    @include reset__list;
+    margin: 0.5em 0;
+    & li {
+        border-radius: 10px;
+        padding: 0.5em;
     }
-    .menu-toggle:checked + .menu-icon span:first-child {
-        background-color: rgb(255, 0, 0);
-        transform: rotate(45deg) translate(9px, 10px);
-        width: 40px;
-        border-radius: 5px;
+    & li:hover {
+        background: #505050;
     }
-    .menu-toggle:checked + .menu-icon span:nth-child(2) {
-        opacity: 0%;
-    }
-    .menu-toggle:checked + .menu-icon span:last-child {
-        background-color: rgb(255, 0, 0);
-        transform: rotate(-45deg) translate(8px, -10px);
-        width: 40px;
-        border-radius: 5px;
-    }
-    header {
-        padding: 0 1em;
-        transition: 0.5s;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        z-index: 100;
-    }
-    .logo {
-        width: 20%;
-        margin-top: 10px;
-    }
-    nav {
-        width: 100%;
-        z-index: -999;
-        opacity: 0%;
-        transition: 0.5s;
-    }
-    .plusHome {
-        display: flex;
-        align-items: start;
-        flex-direction: column;
-        // flex-direction: column;
-        height: 260px;
-    }
-    .hamburg-logo {
-        top: 0%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-    .hide-show {
-        width: 100%;
-        z-index: 999;
-        opacity: 100%;
-    }
+}
+.slid1 {
+    width: 100%;
+}
+.videozin {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video {
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover; /* Ajusta o vídeo para cobrir a tela */
+}
+.sinopse {
+    @include height-width(auto, 30%);
+    @include flexBox(flex, 0, center, 0);
+    margin: auto;
+    position: absolute;
+    top: 85%;
+    left: 36%;
+    animation: 2s ancora backwards ease-in-out infinite;
+}
+
+.bnt_sinops {
+    @include height-width(60px, 70px);
+    @include flexBox(flex, center, center);
+    border-radius: 100%;
+}
+.bnt_sinops span:first-child {
+    @include height-width(5px, 35px);
+    animation: 3s back backwards ease-in-out infinite;
+    display: block;
+    margin: 0.5em 0;
+    background-color: $color__red;
+    transform: rotate(40deg) translate(5px, 0px);
+    border-radius: 5px 0 0 5px;
+}
+.bnt_sinops span:last-child {
+    @include height-width(5px, 35px);
+    animation: 3s back backwards ease-in-out infinite;
+    display: block;
+    margin: 0.5em 0;
+    background-color: $color__red;
+    transform: rotate(140deg) translate(6px, 1px);
+    border-radius: 5px 0 0 5px;
+}
+
+.sectionSlides {
+    @include height-width(96vh, auto);
+    @include flexBox(flex, center, center, column);
+    color: $color__white;
+    padding: 1em;
+}
+.slides {
+    @include flexBox(flex, center, center, 0);
+    margin: 0.5em 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.animeSlide {
+    @include height-width(96%, 45%);
+    margin: 0 0.5em;
+}
+.slideANIME {
+    @include height-width(auto, 45%);
+    margin: 0 0.5em;
+}
+
+.movendo {
+    cursor: grabbing;
+}
+
+.wind {
+    @include height-width(auto, 100%);
+    padding: 1em;
+}
+.wind__text {
+    @include height-width(250px);
+    @include flexBox(flex, 0, center, column);
+    justify-content: space-around;
+    padding: 1em;
+    color: $color__white;
+    text-align: justify;
+}
+.kimetsu {
+    width: 100%;
+    padding: 1em;
+}
+.kimetsu__text {
+    @include flexBox(flex, 0, space-around, column);
+    padding: 1em;
+    color: $color__white;
+    height: 250px;
+    text-align: justify;
+}
+.ads_bnt {
+    @include bg-color_color($color__red, $color__black);
+    border: 2px solid rgba(255, 0, 0, 0);
+    padding: 0.5em 1em;
+}
+.ads_bnt:hover {
+    @include bg-color_color($color__red, $color__white);
+}
+.ver_bnt {
+    border: 2px solid $color__red;
+    @include bg-color_color(transparent, $color__red);
+    padding: 0.5em 1em;
+}
+.ver_bnt:hover {
+    @include bg-color_color(transparent, $color__white);
+}
+footer {
+    @include flexBox(flex, center, center);
+}
+.footer-img {
+    width: 50%;
+    position: absolute;
+    left: -10%;
+    z-index: -10;
+}
+.rodape {
+    padding: 1em;
+    @include flexBox(flex, center, center, column);
     ul {
-        @include reset__list;
-        margin: 0.5em 0;
-        & li {
-            border-radius: 10px;
-            padding: 0.5em;
-            color: white;
-        }
-        & li:hover {
-            background: #505050;
-        }
-    }
-    .slid1 {
-        width: 100%;
-    }
-    .video {
-        width: 100%;
-    }
-    @keyframes ancora {
-        0%{
-            top: 85%;
-        }
-        50% {
-            top: 82%;
-        }
-        100%{
-            top:75;
-            
-        }
-    }
-    @keyframes back {
-        0%{
-            background-color: red;
-        }
-        50% {
-            background-color: rgb(201, 93, 93);
-        }
-        100%{
-            background-color: white;
-        }
-    }
-    .sinopse {
-        width: 30%;
-        margin: auto;
-        position: absolute;
-        top: 85%;
-        left: 36%;
-        animation-duration: 2s;
-        animation-name: ancora;
-        animation-fill-mode: backwards;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        display: flex;
-        justify-content: center;
-    }
-
-    .bnt_sinops {
-        height: 60px;
-        background-color: #fff3f309;
-        width: 70px;
-        border-radius:100% ;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .bnt_sinops span:first-child {
-        animation: 3s back backwards ease-in-out infinite;
-        display: block;
-        margin: 0.5em 0;
-        width: 35px;
-        height: 5px;
-        background-color: rgb(255, 0, 0);
-        transform: rotate(40deg) translate(5px, 0px);
-        border-radius: 5px 0 0 5px;
-    }
-    .bnt_sinops span:last-child {
-        animation: 3s back backwards ease-in-out infinite;
-        display: block;
-        margin: 0.5em 0;
-        width: 35px;
-        height: 5px;
-        background-color: rgb(255, 0, 0);
-        transform: rotate(140deg) translate(6px, 1px);
-        border-radius: 5px 0 0 5px;
-    }
-
-    .sectionSlides {
-        color: white;
-        padding: 1em;
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-    .slides {
-        margin: 0.5em 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexBox(flex, center, center, 0);
         justify-content: space-around;
-        overflow: hidden;
-        transition: 0.5s;
-    }
-    .animeSlide {
-        width: 45%;
-        margin: 0 0.5em;
-        height: 96%;
-    }
-    .slideANIME {
-        width: 45%;
-        margin: 0 0.5em;
-    }
-
-    .movendo {
-        cursor: grabbing;
-    }
-
-    .wind {
-        width: 100%;
-        padding: 1em;
-    }
-    .wind__text {
-        padding: 1em;
-        color: white;
-        height: 250px;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .kimetsu {
-        width: 100%;
-        padding: 1em;
-    }
-    .kimetsu__text {
-        padding: 1em;
-        color: white;
-        height: 250px;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .ads_bnt {
-        border: 2px solid rgba(255, 0, 0, 0);
-        color: #212121;
-        background-color: red;
-        padding: 0.5em 1em;
-    }
-    .ads_bnt:hover {
-        background-color: rgb(255, 37, 37);
-        color: #ffffff;
-    }
-    .ver_bnt {
-        border: 2px solid red;
-        color: #ff0000;
-        background-color: transparent;
-        padding: 0.5em 1em;
-    }
-    .ver_bnt:hover {
-        color: #ffffff;
-        background-color: transparent;
-    }
-    footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .footer-img {
-        width: 50%;
-        position: absolute;
-        left: -10%;
-        z-index: -10;
-    }
-    .rodape {
-        padding: 1em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        ul {
-            font-size: 10px;
-            font-family: "Courier New", Courier, monospace;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            li {
-                list-style: circle;
-            }
+        flex-wrap: wrap;
+        font-size: 10px;
+        font-family: "Courier New", Courier, monospace;
+        li {
+            list-style: circle;
         }
     }
 }

@@ -1,0 +1,14 @@
+@mixin flexBox($dplay, $aling, $just: start, $direc: row) {
+    display: $dplay;
+    align-items: $aling;
+    justify-content: $just;
+    flex-direction: $direc;
+}
+@mixin height-width($height: auto, $width: auto) {
+    height: $height;
+    width: $width;
+}
+@mixin bg-color_color($bg-color, $color){
+    background-color: $bg-color;
+    color: $color;
+}
